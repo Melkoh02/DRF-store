@@ -74,3 +74,6 @@
 - "groups": "/api/groups/": GET, POST, HEAD, OPTIONS.
 - "products": "api/products/": GET, POST, HEAD, OPTIONS.
 - "images": "/api/images/": GET, POST, HEAD, OPTIONS.
+- "token": "/api/token/": POST, OPTIONS.
+- "refresh": "/api/token/refresh/": POST, OPTIONS.
+- "verify": "/api/token/verify/": POST, OPTIONS.
