@@ -1,0 +1,43 @@
+{% extends 'master.html' %}
+
+{% block title %}
+    All Products
+{% endblock title %}
+
+{% block content %}
+    <div class='mycard'>
+        <h1>Products</h1>       
+        <table class='my-table' border="1">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Description</th>
+                    <th>Category</th>
+                    <th>Status</th>
+                    <th>Stock</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in myproducts %}
+                    <tr onclick="window.location='{% url 'details' product.id %}'">
+                        <td>
+                            {% if product.productimage_set.all %}
+                                <img src="{{ product.productimage_set.first.image.url }}" alt="{{ product.name }} Image" style="width: 100%; height: 100%;">
+                            {% else %}
+                                No Image
+                            {% endif %}
+                        </td>
+                        <td>{{ product.name }}</td>
+                        <td>${{ product.price }}</td>
+                        <td>{{ product.description }}</td>
+                        <td>{{ product.category }}</td>
+                        <td>{{ product.status }}</td>
+                        <td>{{ product.stock }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div> 
+{% endblock content %}

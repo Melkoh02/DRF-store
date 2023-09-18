@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.10/css/responsive.dataTables.css">
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/responsive/2.2.10/js/dataTables.responsive.js"></script>
+  <link rel="stylesheet" href="{% static 'mystyles.css' %}">
+  <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+
+<div class="topnav">
+  <a href="/">HOME</a> |
+  <a href="/products">PRODUCTS</a> |
+  <a href="/api">APIs</a> |
+  <a href="/admin">Admin</a>
+</div>
+
+{% block content %}
+{% endblock %}
+<script>
+  $(document).ready( function () {
+      $('.my-table').DataTable({
+          responsive: true
+      });
+  } );
+</script>
+</body>
+</html>
