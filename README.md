@@ -79,3 +79,5 @@
 - "token": "/api/token/": POST, OPTIONS.
 - "refresh": "/api/token/refresh/": POST, OPTIONS.
 - "verify": "/api/token/verify/": POST, OPTIONS.
+
+![API Token Obtain Pair Page](screenshot04.png)
